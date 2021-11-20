@@ -1,8 +1,11 @@
 
-import win32gui
+import win32api
 import time
+import mouse
 
 while True:
-    time.sleep(0.5)
-    x, y = win32gui.GetCursorPos()
-    print(x, y)
+    if(mouse.is_pressed("left")):
+        time.sleep(0.5)
+        x, y = win32api.GetCursorPos()
+        xy = str(x)+","+str(y)
+        print(xy.replace(" ",""))
